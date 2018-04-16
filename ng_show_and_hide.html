@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ng- hide ng show</title>
+	<script src="angular.js"></script>
+</head>
+<body ng-app ng-init="x=true">
+	
+<input type="button" value="Register" ng-click="x=true">
+<input type="button" value="Login" ng-click="x=false">
+
+
+<div ng-hide="x">
+     
+     <h3> login</h3>
+	Username:<input type="text"><br><br>
+
+	password:<input type="password">
+</div>
+<div ng-show="x">
+	<h3>Register</h3>
+	Username:<input type="text"><br><br>
+
+	password:<input type="password">
+</div>
+
+ </body>
+</html>

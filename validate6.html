@@ -1,0 +1,13 @@
+<script src="angular.min.js"></script>
+<body ng-app >
+<form name="f1">
+<select name="drp1" ng-model="d1" required>
+<option value="">Select one</option>
+<option>Angular</option>
+<option>PHP</option>
+<option>Javascript</option>
+</select>
+<span ng-show="f1.drp1.$invalid">Select a script</span>
+
+</form>
+</body>

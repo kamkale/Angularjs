@@ -1,0 +1,45 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.i=100
+fun1=function(){
+	$scope.i++
+	alert($scope.i)
+	$scope.$apply()
+}
+})
+app.controller("c2",function($scope){
+	$scope.y=999
+fun2=function(){
+$scope.y++
+alert($scope.y)
+
+}
+})
+app.controller("c3",function($scope){
+$scope.z=666
+fun3=function(){
+	$scope.z++
+	alert($scope.z)
+}
+})
+</script>
+<body ng-app="myapp" >
+<div ng-controller="c1">
+<input type="button" value="Click" onclick="fun1()">
+{{i}}
+<div ng-controller="c2">
+{{y}}
+<input type="button" value="Click" onclick="fun2()">
+</div>
+</div>
+<div ng-controller="c3">
+{{z}}
+<input type="button" value="Click" onclick="fun3()">
+
+</div>
+</body>
+
+
+

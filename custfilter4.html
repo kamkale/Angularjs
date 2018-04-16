@@ -1,0 +1,17 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.filter("f1",function(){
+return function(str){
+	if(str>=450)
+	return "Grade -A"
+	else if(str>=300 && str<450)
+	return "Grade -B"
+	}
+})
+</script>
+<body ng-app="myapp" >
+{{470 | f1}}
+{{300 | f1}}
+{{480 | f1}}
+</body>

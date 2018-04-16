@@ -1,0 +1,18 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.directive("d1",function(){
+return{
+		scope:{
+		x:"=sno",
+		y:"=uname"
+		},
+		restrict:"ECA",
+		templateUrl:"xyz.html"
+	}
+})
+</script>
+<body ng-app="myapp">
+<d1 sno="100" uname="'scott'"></d1>
+<d1 sno=123 uname="'john'"></d1>
+</body>

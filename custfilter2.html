@@ -1,0 +1,14 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.filter("f1",function(){
+return function(str){
+	str=str.split("-")
+	str=str[2]+"-"+str[1]+"-"+str[0]
+	return str;
+	}
+})
+</script>
+<body ng-app="myapp"  ng-init="x='2018-12-31'">
+{{x | f1}}
+</body>

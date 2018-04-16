@@ -1,0 +1,20 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.filter("f1",function(){
+return function(str){
+	nstr=""
+	for(i=0;i<str.length;i++)
+	{
+		if(i%2==0)
+		nstr+=str[i].toUpperCase()
+		else
+		nstr+=str[i]
+	}
+	return nstr;
+	}
+})
+</script>
+<body ng-app="myapp"  ng-init="x='scott'">
+{{x | f1}}
+</body>

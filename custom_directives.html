@@ -1,0 +1,19 @@
+<<!DOCTYPE html>
+    <html>
+    <title>Custome Directives</title>
+
+    <script src="angular.js"></script>
+    <script>
+        app = angular.module("myapp", [])
+        app.directive("dir1", function() {
+            return {
+                template: "<h2>hi kamlesh</h2>"
+            }
+        })
+    </script>
+
+    <body ng-app="myapp">
+        <dir1></dir1>
+    </body>
+
+    </html>

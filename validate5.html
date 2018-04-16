@@ -1,0 +1,8 @@
+<script src="angular.min.js"></script>
+<body ng-app >
+<form name="f1">
+<input type="email" name="em1" ng-model="txtem" style="padding:5px 30px 5px 5px;width:200px">
+<img src="correct.jpg" width="20"  style="margin-left:-25;margin-top:5px;position:absolute;" ng-show="f1.em1.$valid && f1.em1.$dirty">
+<img src="wrong.png" width="20" style="margin-left:-25;margin-top:5px;position:absolute;" ng-show="f1.em1.$invalid && f1.em1.$dirty">
+</form>
+</body>

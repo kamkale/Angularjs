@@ -1,0 +1,17 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.directive("dir1",function(){
+return{
+compile:function(ele){
+alert("Compile Exec")
+alert(ele.html())
+ele.css("color","blue").append("Welcome")
+},
+template:"<h2>Scott</h2>"
+}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<dir1></dir1>
+</body>

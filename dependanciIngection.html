@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dependancie Ingection</title>
+	<script src="angular.js"></script>
+</head>
+<script>
+	 app=angular.module("myapp1",['myapp2'])
+	 app.controller("a1",function($scope){$scope.x=100,$scope.a="kam"})
+
+	 app1=angular.module("myapp2",[])
+	 app1.controller("b",function($scope){$scope.y=200})
+
+</script>
+<body ng-app="myapp1" ng-controller="a1">
+	<h3 ng-bind="[{'x','y','a'}]" ng-controller="b">
+		{{x}}......{{y}}....{{a}}
+
+</body>
+</html>

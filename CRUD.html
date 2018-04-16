@@ -1,0 +1,68 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.obj=[{
+"uname":"scott","city":"hyd"
+},{
+"uname":"john","city":"sec"
+},{
+"uname":"alex","city":"vizag"
+}]
+/////////Delete
+$scope.fundel=function(ind){
+//alert(ind)
+$scope.obj.splice(ind,1)
+alert("Deleted")
+}
+////////Insert
+$scope.funins=function(){
+	ps=prompt("Enter pos")
+	ob={uname:$scope.t1,city:$scope.t2}
+	$scope.obj.splice(ps-1,0,ob)
+	$scope.t1="";$scope.t2=""
+}
+////////Edit
+$scope.funEdit=function(inx){
+	$scope.tmp=inx
+	$scope.t11=$scope.obj[inx].uname
+	$scope.t22=$scope.obj[inx].city
+}
+//////Save
+$scope.funsave=function(){
+	$scope.obj[$scope.tmp].uname=$scope.t11
+	$scope.obj[$scope.tmp].city=$scope.t22
+	alert("Updated")
+	$scope.t11="";$scope.t22=""
+}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<table border='1'>
+<tr ng-repeat="x in obj">
+<td>{{x.uname}}</td>
+<td>{{x.city}}</td>
+<td><img src="de.jpg" width="20" ng-click="fundel($index)">
+<img src="edit.jpg" width="15" ng-click="funEdit($index)"></td>
+</tr>
+</table>
+<div>
+<h3>Insert</h3>
+Name:<input ng-model="t1">
+<br>
+City:<input ng-model="t2">
+<br>
+<input type="button" value="Insert" ng-click="funins()">
+</div>
+<div>
+<h3>Edit</h3>
+Name:<input ng-model="t11">
+<br>
+City:<input ng-model="t22">
+<br>
+<input type="button" value="Save" ng-click="funsave()">
+</div>
+</body>
+
+
+

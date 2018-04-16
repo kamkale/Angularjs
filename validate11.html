@@ -1,0 +1,13 @@
+<script src="angular.min.js">
+</script>
+<body ng-app>
+<form name="frm1">
+Username:<input minlength="10" maxlength="15" name="txt1" ng-model="txt1" pattern="[A-S]*">
+<span ng-if="frm1.txt1.$dirty && frm1.txt1.$error.minlength">Min length > 10 char</span>
+<span ng-if="frm1.txt1.$dirty && frm1.txt1.$error.pattern">Enter Valid Pattern</span>
+</form>
+
+
+
+
+

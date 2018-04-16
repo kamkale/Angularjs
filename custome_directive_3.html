@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+    <html>
+    <title>Custome Directives</title>
+
+    <script src="angular.js"></script>
+    <script>
+        app = angular.module("myapp", [])
+        app.directive("dir1", function() {
+            return {
+                scope: {
+                    a: "=sno",
+                    b: "=uname"
+                },
+                restrict: "ECA",
+                templateUrl: "kamlesh2.html"
+            }
+        })
+    </script>
+
+    <body ng-app="myapp">
+        <dir1 sno="123" uname="'kamlesh'"></dir1>
+        <dir1 sno="124" uname="'kamlesh22'"></dir1>
+    </body>
+
+    </html>
